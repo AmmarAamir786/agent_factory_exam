@@ -1,7 +1,7 @@
 ---
 name: generating-mcq-exams
 description: |
-  Generate comprehensive, tough, scenario-based MCQ exams from any source material.
+  Generate comprehensive, tough, mixed-strategy MCQ exams from any source material.
   This skill should be used when users ask to create an exam, generate MCQs, make a quiz,
   build test questions, create assessment questions, or generate practice tests from a file,
   chapter, document, or any study material.
@@ -9,16 +9,31 @@ description: |
 
 # MCQ Exam Generator
 
-Generate scenario-based multiple-choice exams that test deep understanding, not surface recall.
+Generate mixed-strategy multiple-choice exams that use the right question type for each concept — from direct recall to complex scenarios.
 
 ## What This Skill Does
 - Reads any source material (markdown, text, PDF, or other documents)
 - Identifies every key concept, fact, framework, relationship, and mental model
-- Generates tough, scenario-based MCQ questions covering all content
+- Generates a **mixed-strategy exam** using four question types at target proportions
 - Produces a single markdown exam file with inline answers and explanations
 
+## Question Type Mix
+
+| Type | Target % | Bloom's Level | When to Use | Example Pattern |
+|------|----------|---------------|-------------|-----------------|
+| **Direct** | ~20% | 1-2 (Remember/Understand) | Definitions, terminology, key facts, numeric data, named entities | "What does X refer to?" / "Which of the following is a characteristic of Y?" |
+| **Conceptual** | ~25% | 2-3 (Understand/Apply) | Distinctions, comparisons, cause-effect, "why" questions | "Why does X differ from Y?" / "What is the primary purpose of Z?" |
+| **Applied Scenario** | ~40% | 3-5 (Apply/Analyze/Evaluate) | Frameworks in new contexts, role-based decisions, anti-pattern ID | "A [role] faces [situation]. Based on [framework], what should they do?" |
+| **Evaluative Scenario** | ~15% | 5-6 (Evaluate/Create) | Counter-arguments, evidence evaluation, synthesis across concepts | "[Claim]. A critic argues [counter]. What is the best response?" |
+
+### Mix Rationale
+- **Direct questions** anchor foundational knowledge — you can't apply what you can't recall
+- **Conceptual questions** verify understanding without scenario overhead
+- **Applied scenarios** test transfer to new contexts (the exam's backbone)
+- **Evaluative scenarios** separate mastery from competence
+- **Cognitive pacing:** alternating short direct questions with longer scenarios prevents fatigue
+
 ## What This Skill Does NOT Do
-- Generate easy recall-based questions ("What year did X happen?")
 - Create fill-in-the-blank, essay, or short-answer questions
 - Grade or evaluate student responses
 - Generate questions beyond the source material's content
@@ -69,16 +84,23 @@ See `references/answer-distribution.md` for the distribution algorithm.
 
 ### Step 4: Write Questions
 
-For each question, follow ALL rules from `references/question-design.md` and `references/option-design.md`. Key rules:
+For each question, follow ALL rules from `references/question-design.md` and `references/option-design.md`.
 
-**Questions must be:**
-- Scenario-based (present a situation, ask for analysis/judgment)
+**Choose the right question type for each concept:**
+
+- **Direct** (~20%) — Use for definitions, terminology, key facts, specific numbers, named entities. Keep stems short (1-2 sentences). Options should be concise and distinct.
+- **Conceptual** (~25%) — Use for comparisons, distinctions, cause-effect, purpose/rationale. Stems are 1-3 sentences. Options explain reasoning briefly.
+- **Applied Scenario** (~40%) — Use for frameworks, models, processes, anti-patterns. Present a situation, ask for analysis. Stems are 2-4 sentences with embedded context.
+- **Evaluative Scenario** (~15%) — Use for counter-arguments, evidence evaluation, synthesis. Stems are 3-5 sentences with nuanced setups.
+
+**All question types must be:**
 - Self-contained (never say "the chapter," "the text," "the reading," "according to the passage")
 - Embed necessary context directly in the question stem
 
-**Options must be:**
-- All four options at comparable word count (within ~20% of each other)
-- Every wrong option plausible and detailed — sounds like partial understanding
+**Option length should match question type:**
+- Direct/Conceptual questions: options can be short (5-15 words) — don't pad them artificially
+- Applied/Evaluative scenarios: options are naturally longer (15-35 words) — maintain ~20% balance within each question
+- Every wrong option must be plausible at the question's complexity level
 - Correct option NOT identifiable by length, specificity, or hedging language
 
 ### Step 5: Write Inline Answers
@@ -118,13 +140,19 @@ Run through the output checklist below before delivering.
 ## Output Checklist
 
 ### Question Quality
-- [ ] Every question is scenario-based or application-based (no "What is X?" recall)
+- [ ] Question type mix is approximately: ~20% Direct, ~25% Conceptual, ~40% Applied Scenario, ~15% Evaluative Scenario
+- [ ] Each question is tagged with its type (e.g., `[Direct]`, `[Conceptual]`, `[Applied]`, `[Evaluative]`) in the exam for verification
+- [ ] Direct and Conceptual questions are concise — stems are 1-3 sentences, options are 5-15 words
+- [ ] Applied and Evaluative questions use scenario stems with embedded context
 - [ ] Every question is self-contained (no "the chapter says," "according to the text," "the reading mentions")
 - [ ] Sufficient context is embedded in each question stem for standalone comprehension
 - [ ] All major concepts from the source material are covered
+- [ ] Question types vary within sections — no 5+ consecutive scenario questions or 5+ consecutive direct questions
 
 ### Option Quality
-- [ ] All four options per question have comparable length (within ~20%)
+- [ ] All four options per question have comparable length (within ~20% of each other)
+- [ ] Direct/Conceptual questions have short, crisp options (5-15 words) — not artificially padded
+- [ ] Scenario questions have naturally longer options — but still balanced within each question
 - [ ] Every distractor is plausible — sounds like something a partially-informed student would believe
 - [ ] Correct answer is NOT consistently the longest, most hedged, or most specific option
 - [ ] No "all of the above" or "none of the above" options

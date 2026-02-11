@@ -23,11 +23,23 @@ This is the single most common flaw in MCQ design. Students learn to pick the lo
 ### Measurement Rule
 All four options for a given question must be within ~20% word count of each other. If the correct answer is 30 words, every distractor must be 24-36 words.
 
+### Option Length by Question Type
+
+| Question Type | Target Option Length | Guidance |
+|---------------|---------------------|----------|
+| **Direct** | 5-15 words | Keep options crisp. Do NOT pad to match scenario question length. Short, distinct options are the right design for recall questions. |
+| **Conceptual** | 10-20 words | Brief explanations. One sentence per option is ideal. |
+| **Applied Scenario** | 15-35 words | Naturally longer — options explain reasoning. Balance within the question. |
+| **Evaluative Scenario** | 20-40 words | Longest options — complex reasoning. Still balance within the question. |
+
+**Critical:** The ~20% balance rule applies *within each question*, not across the entire exam. A Direct question with 8-word options and a Scenario question with 30-word options is correct — they're different question types.
+
 ### How to Achieve This
 1. Write the correct answer first at natural length
 2. Expand each distractor to match that length with plausible detail
 3. If the correct answer is naturally long, compress it and add detail to distractors
 4. Never pad with filler — added length must be substantive, plausible reasoning
+5. For Direct questions: resist the urge to expand — short options are a feature, not a bug
 
 ---
 
