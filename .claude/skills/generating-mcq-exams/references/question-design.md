@@ -27,7 +27,7 @@ Rules and patterns for writing mixed-strategy MCQ questions — from direct reca
 
 4. **Vary question types within sections.** Alternate between direct, conceptual, and scenario questions. No more than 3 consecutive questions of the same type. This creates cognitive pacing — short punchy questions followed by deeper scenarios.
 
-5. **Target the question type mix.** Across the full exam: ~20% Direct, ~25% Conceptual, ~40% Applied Scenario, ~15% Evaluative Scenario. Tag each question with its type (e.g., `[Direct]`, `[Conceptual]`, `[Applied]`, `[Evaluative]`) for verification.
+5. **Target the question type mix.** Across the full exam: ~20% Direct, ~25% Conceptual, ~40% Applied Scenario, ~15% Evaluative Scenario. Track the type internally during planning, but **NEVER include type tags** (e.g., `[Direct]`, `[Conceptual]`) **in the exam output** — the student-facing exam must be clean with no internal metadata visible.
 
 6. **Keep direct/conceptual questions concise.** Stems should be 1-3 sentences. Options should be 5-15 words. Do NOT artificially inflate these to match scenario question length. Short, crisp questions test recall and understanding efficiently.
 
@@ -71,12 +71,14 @@ The question should read as if it's a standalone assessment item — like someth
 
 Decide the type for each question **before** writing it. Use this decision tree:
 
-| If the concept is... | Use this type | Tag |
-|----------------------|---------------|-----|
-| A definition, term, named entity, specific number, or key fact | **Direct** | `[Direct]` |
-| A comparison, distinction, cause-effect, or "why/purpose" question | **Conceptual** | `[Conceptual]` |
-| A framework, model, process, or decision applied to a new situation | **Applied Scenario** | `[Applied]` |
-| A counter-argument, evidence evaluation, or multi-concept synthesis | **Evaluative Scenario** | `[Evaluative]` |
+| If the concept is... | Use this type |
+|----------------------|---------------|
+| A definition, term, named entity, specific number, or key fact | **Direct** |
+| A comparison, distinction, cause-effect, or "why/purpose" question | **Conceptual** |
+| A framework, model, process, or decision applied to a new situation | **Applied Scenario** |
+| A counter-argument, evidence evaluation, or multi-concept synthesis | **Evaluative Scenario** |
+
+**Important:** The question type is an internal planning tool. Do NOT include type labels in the exam output.
 
 ---
 
@@ -232,59 +234,59 @@ Levels 1-2 are valid for ~20% of the exam (Direct questions). The majority (~55%
 ### Direct Templates
 
 ```
-[Direct] "What does [term] refer to?"
+"What does [term] refer to?"
 ```
 ```
-[Direct] "Which of the following is [a characteristic / component / example] of [concept]?"
+"Which of the following is [a characteristic / component / example] of [concept]?"
 ```
 ```
-[Direct] "How many [items] does [framework] define?"
+"How many [items] does [framework] define?"
 ```
 ```
-[Direct] "What is the key difference between [Term A] and [Term B]?"
+"What is the key difference between [Term A] and [Term B]?"
 ```
 
 ### Conceptual Templates
 
 ```
-[Conceptual] "Why is [approach A] preferred over [approach B]?"
+"Why is [approach A] preferred over [approach B]?"
 ```
 ```
-[Conceptual] "What is the primary purpose of [framework/component]?"
+"What is the primary purpose of [framework/component]?"
 ```
 ```
-[Conceptual] "What is the most likely consequence of [action/condition]?"
+"What is the most likely consequence of [action/condition]?"
 ```
 ```
-[Conceptual] "How does [Concept A] relate to [Concept B]?"
+"How does [Concept A] relate to [Concept B]?"
 ```
 
 ### Applied Scenario Templates
 
 ```
-[Applied] "[Framework name] distinguishes between [X] and [Y]. A [role] is in [situation].
+"[Framework name] distinguishes between [X] and [Y]. A [role] is in [situation].
 Based on the diagnostic criteria, they should..."
 ```
 ```
-[Applied] "In the [process name], Phase [N] involves [brief description]. A team
+"In the [process name], Phase [N] involves [brief description]. A team
 [does something wrong related to that phase]. The likely consequence is..."
 ```
 ```
-[Applied] "[Concept A] is described as [trait]. [Concept B] is described as [opposite trait].
+"[Concept A] is described as [trait]. [Concept B] is described as [opposite trait].
 A [role] wants [specific outcome]. What does this suggest?"
 ```
 ```
-[Applied] "A [real-world entity] currently [does X]. A [new approach] would differ because..."
+"A [real-world entity] currently [does X]. A [new approach] would differ because..."
 ```
 
 ### Evaluative Scenario Templates
 
 ```
-[Evaluative] "[Statistic with source]. A [skeptic/critic] argues [counter-interpretation].
+"[Statistic with source]. A [skeptic/critic] argues [counter-interpretation].
 The most accurate response is..."
 ```
 ```
-[Evaluative] "[Claim A] and [Claim B] appear to contradict each other. What resolves this tension?"
+"[Claim A] and [Claim B] appear to contradict each other. What resolves this tension?"
 ```
 
 ---

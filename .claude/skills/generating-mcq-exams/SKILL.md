@@ -141,7 +141,7 @@ Run through the output checklist below before delivering.
 
 ### Question Quality
 - [ ] Question type mix is approximately: ~20% Direct, ~25% Conceptual, ~40% Applied Scenario, ~15% Evaluative Scenario
-- [ ] Each question is tagged with its type (e.g., `[Direct]`, `[Conceptual]`, `[Applied]`, `[Evaluative]`) in the exam for verification
+- [ ] **NO type tags in the exam output** — do NOT prefix questions with `[Direct]`, `[Conceptual]`, `[Applied]`, or `[Evaluative]`. The question type is an internal planning tool only; the student-facing exam must be clean
 - [ ] Direct and Conceptual questions are concise — stems are 1-3 sentences, options are 5-15 words
 - [ ] Applied and Evaluative questions use scenario stems with embedded context
 - [ ] Every question is self-contained (no "the chapter says," "according to the text," "the reading mentions")
@@ -150,6 +150,7 @@ Run through the output checklist below before delivering.
 - [ ] Question types vary within sections — no 5+ consecutive scenario questions or 5+ consecutive direct questions
 
 ### Option Quality
+- [ ] **CRITICAL: The correct answer must NOT be longer than the distractors.** After writing each question, count the words in each option. If the correct answer is the longest, either compress it or expand the distractors to match. A test-savvy student should never be able to pick the right answer by length alone
 - [ ] All four options per question have comparable length (within ~20% of each other)
 - [ ] Direct/Conceptual questions have short, crisp options (5-15 words) — not artificially padded
 - [ ] Scenario questions have naturally longer options — but still balanced within each question
