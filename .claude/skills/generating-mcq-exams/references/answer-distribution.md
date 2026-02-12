@@ -7,18 +7,20 @@ Algorithm and verification method for ensuring balanced A/B/C/D distribution.
 ## Distribution Algorithm
 
 ### Step 1: Determine Total Questions
+
 Count the total number of questions planned (N).
 
 ### Step 2: Calculate Targets
+
 Each letter should appear approximately N/4 times:
 
 | Total Questions | Target per Letter | Acceptable Range |
-|----------------|-------------------|------------------|
-| 20 | 5 | 4-6 |
-| 30 | 7-8 | 6-9 |
-| 40 | 10 | 9-11 |
-| 50 | 12-13 | 11-14 |
-| 60 | 15 | 13-17 |
+| --------------- | ----------------- | ---------------- |
+| 20              | 5                 | 4-6              |
+| 30              | 7-8               | 6-9              |
+| 40              | 10                | 9-11             |
+| 50              | 12-13             | 11-14            |
+| 60              | 15                | 13-17            |
 
 ### Step 3: Pre-Assign Using Rotation with Variation
 
@@ -42,13 +44,14 @@ For any remaining questions (if N is not divisible by 4), distribute to maintain
 After assignment, check:
 
 1. **No more than 3 consecutive same-letter answers**
-   - Scan the sequence: if you see AAAA or BBBB, swap one with an adjacent question
 
+   - Scan the sequence: if you see AAAA or BBBB, swap one with an adjacent question
 2. **Each letter within 23-27% of total**
+
    - Count occurrences of each letter
    - If any letter exceeds range, swap with an underrepresented letter
-
 3. **No obvious patterns**
+
    - No strict alternation (ABABAB)
    - No predictable cycles (ABCDABCD)
    - Sections should each contain a mix of letters
@@ -77,6 +80,7 @@ If any check fails, swap answer positions between questions to fix without chang
 ## Swapping Technique
 
 To move a correct answer from position B to position D for a given question:
+
 1. Take current option B (correct) and current option D (distractor)
 2. Swap their positions: what was B becomes D, what was D becomes B
 3. Update the answer key to reflect D as correct
